@@ -1,0 +1,136 @@
+-- this query will create tables with mock data (just like the firebase would do). Make sure that you have analytics dataset. Keep in mind that you choose correct location.
+
+CREATE OR REPLACE TABLE `analytics.events_20230101` AS (
+	SELECT '20230101' AS event_date, 1672527600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230102` AS (
+	SELECT '20230102' AS event_date, 1672614000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230124` AS (
+	SELECT '20230124' AS event_date, 1674514800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230124' AS event_date, 1674514800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230124' AS event_date, 1674514800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_3' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230201` AS (
+	SELECT '20230201' AS event_date, 1675206000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230212` AS (
+	SELECT '20230212' AS event_date, 1676156400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230220` AS (
+	SELECT '20230220' AS event_date, 1676847600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 6 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230220' AS event_date, 1676847600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_5' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230410` AS (
+	SELECT '20230410' AS event_date, 1681077600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 7 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230410' AS event_date, 1681077600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 7 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230410' AS event_date, 1681077600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_5' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230410' AS event_date, 1681077600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230601` AS (
+	SELECT '20230601' AS event_date, 1685570400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_1' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 8 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230601' AS event_date, 1685570400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 8 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230601' AS event_date, 1685570400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_3' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230601' AS event_date, 1685570400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 6 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230110` AS (
+	SELECT '20230110' AS event_date, 1673305200.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230112` AS (
+	SELECT '20230112' AS event_date, 1673478000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230301` AS (
+	SELECT '20230301' AS event_date, 1677625200.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230301' AS event_date, 1677625200.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230312` AS (
+	SELECT '20230312' AS event_date, 1678575600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230320` AS (
+	SELECT '20230320' AS event_date, 1679266800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_2' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 6 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230320' AS event_date, 1679266800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_5' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230320' AS event_date, 1679266800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230120` AS (
+	SELECT '20230120' AS event_date, 1674169200.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_3' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230501` AS (
+	SELECT '20230501' AS event_date, 1682892000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_3' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230501' AS event_date, 1682892000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_7' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230512` AS (
+	SELECT '20230512' AS event_date, 1683842400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_3' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230512' AS event_date, 1683842400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230202` AS (
+	SELECT '20230202' AS event_date, 1675292400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230214` AS (
+	SELECT '20230214' AS event_date, 1676329200.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230310` AS (
+	SELECT '20230310' AS event_date, 1678402800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_4' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'Southern Europe' AS sub_continent, 'Croatia' AS country) AS geo
+	UNION ALL
+	SELECT '20230310' AS event_date, 1678402800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230210` AS (
+	SELECT '20230210' AS event_date, 1675983600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_5' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230610` AS (
+	SELECT '20230610' AS event_date, 1686348000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_5' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230610' AS event_date, 1686348000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 6 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230610' AS event_date, 1686348000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_7' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230610' AS event_date, 1686348000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_8' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230402` AS (
+	SELECT '20230402' AS event_date, 1680386400.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230505` AS (
+	SELECT '20230505' AS event_date, 1683237600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_6' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 5 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230505' AS event_date, 1683237600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_7' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 4 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo
+	UNION ALL
+	SELECT '20230505' AS event_date, 1683237600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_8' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo
+	UNION ALL
+	SELECT '20230505' AS event_date, 1683237600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_9' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230315` AS (
+	SELECT '20230315' AS event_date, 1678834800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_7' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230325` AS (
+	SELECT '20230325' AS event_date, 1679698800.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_7' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'Europe' AS continent, 'North Central Europe' AS sub_continent, 'Germany' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230405` AS (
+	SELECT '20230405' AS event_date, 1680645600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_8' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230425` AS (
+	SELECT '20230425' AS event_date, 1682373600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_8' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230415` AS (
+	SELECT '20230415' AS event_date, 1681509600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_9' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230515` AS (
+	SELECT '20230515' AS event_date, 1684101600.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_9' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 3 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptIn' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230605` AS (
+	SELECT '20230605' AS event_date, 1685916000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_10' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 1 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
+
+CREATE OR REPLACE TABLE `analytics.events_20230615` AS (
+	SELECT '20230615' AS event_date, 1686780000.0 AS event_timestamp, 'user_engagement' AS event_name, 'user_10' AS user_pseudo_id, ARRAY(SELECT STRUCT('session_number' AS key, STRUCT('' AS string_value, 2 AS int_value) AS value) UNION ALL SELECT STRUCT('analytic_type' AS key, STRUCT('OptOut' AS string_value, 0 AS int_value) AS value)) AS user_properties, STRUCT( 'America' AS continent, 'North America' AS sub_continent, 'America' AS country) AS geo); 
